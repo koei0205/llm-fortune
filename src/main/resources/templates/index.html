@@ -1,0 +1,20 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title th:text="${title}">LLM占い</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 0; padding: 24px; }
+    .card { max-width: 520px; margin: 0 auto; padding: 20px; border: 1px solid #ddd; border-radius: 12px; }
+    h1 { font-size: 24px; margin: 0 0 12px; }
+    p  { font-size: 16px; margin: 0; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 th:text="${title}">LLM占い</h1>
+    <p th:text="${message}">メッセージ</p>
+  </div>
+</body>
+</html>
