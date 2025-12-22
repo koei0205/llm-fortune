@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>占い結果</title>
+</head>
+<body>
+<h1>占い結果</h1>
+
+<div>
+  <p><b>日時：</b><span th:text="${history.createdAt}"></span></p>
+  <p><b>結果：</b><span th:text="${history.result}"></span></p>
+  <p><b>メッセージ：</b></p>
+  <pre th:text="${history.message}"></pre>
+</div>
+
+<div style="margin-top: 12px;">
+  <a th:href="@{/fortune}">もう一回占う</a>
+</div>
+
+</body>
+</html>
