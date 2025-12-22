@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>占いフォーム</title>
+</head>
+<body>
+<h1>占いフォーム</h1>
+
+<form th:action="@{/fortune}" th:object="${fortuneForm}" method="post">
+  <div>
+    <label>名前：</label>
+    <input type="text" th:field="*{name}" placeholder="例：小林" />
+  </div>
+
+  <div>
+    <label>気分：</label>
+    <input type="text" th:field="*{mood}" placeholder="例：やる気 / 眠い など" />
+  </div>
+
+  <div>
+    <label>質問（Yes/Noで答えられるもの）：</label>
+    <select th:field="*{question}">
+      <option value="" disabled selected>選んでください</option>
+      <option th:each="q : ${questions}" th:value="${q}" th:text="${q}"></option>
+    </select>
+  </div>
+
+  <div style="margin-top: 12px;">
+    <button type="submit">占う</button>
+  </div>
+</form>
+
+</body>
+</html>
